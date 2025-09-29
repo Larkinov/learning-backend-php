@@ -50,3 +50,5 @@ escapeshellcmd - функция может ломать команды с фон
 [Работа с .env](https://github.com/vlucas/phpdotenv)
 
 [Легкая библиотека для работы с Telegram](https://nutgram.dev/docs/introduction)
+
+[Подключение Xdebug](https://ilyachalov.livejournal.com/300231.html) и последующие статьи оттуда же

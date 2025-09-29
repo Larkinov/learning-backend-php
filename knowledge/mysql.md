@@ -25,7 +25,7 @@ docker run --name name-container -v name-container:/var/lib/mysql -p 33060:33060
 войти:
 
 ```bash
-mysql -u root -p crypto_db
+mysql -u root -p BASENAME
 ```
 
 ## Система/Настройки
