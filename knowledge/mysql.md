@@ -99,6 +99,7 @@ GRANT priveleges_type ON table_name TO 'user'@'location'
 ```
 
 Удалить:
+
 ```sql
   REVOKE priveleges_type ON table_name from 'user'@'location'
 ```
@@ -183,19 +184,20 @@ ALTER TABLE books ADD FOREIGN KEY (author_id) REFERENCES authors(author_id);
 
 ### Типы:
 
-* int
-* tinyint(1) - замена boolean
-* float/double
-* decimal(10,2) - Для точных финансовых операций (10 - всего знаков, 2 после запятой)
-* varchar(COUNT_CHAR)
-* timestamp
+- int
+- tinyint(1) - замена boolean
+- float/double
+- decimal(10,2) - Для точных финансовых операций (10 - всего знаков, 2 после запятой)
+- varchar(COUNT_CHAR)
+- timestamp
+- enum(value_1,value_2,value_3) - выбор из списка
 
 Параметры:
 
-* primary key - является ли поле уникальный идентификатор строки в таблице;
-* auto_increment - автоматическая генерация номера;
-* NULL / NOT NULL - может ли столбец принимать нулевое значение;
-* DEFAULT NAME_VALUE - значение по умолчанию;
+- primary key - является ли поле уникальный идентификатор строки в таблице;
+- auto_increment - автоматическая генерация номера;
+- NULL / NOT NULL - может ли столбец принимать нулевое значение;
+- DEFAULT NAME_VALUE - значение по умолчанию;
 
 ## Таблицы
 
@@ -325,6 +327,32 @@ UPDATE table_name SET column_name = 100 WHERE id = 1
 
 ```sql
 SELECT * FROM table ORDER BY id DESC/ASC
+```
+
+## Транзакции
+
+Начать транзакцию:
+
+```sql
+BEGIN/START TRANSACTION
+```
+
+Подтвердить транзакцию:
+
+```sql
+COMMIT
+```
+
+Добавить точку сохранения (точка сохраняет данные в ПРЕДЕЛАХ ТРАНЗАКЦИИ):
+
+```sql
+SAVEPOINT NAME_POINT;
+```
+
+Полностью откатить транзакцию/ откатить до точки сохранения:
+
+```sql
+ROLLBACK / ROLLBACK TO SAVEPOINT NAME_POINT
 ```
 
 ## События
