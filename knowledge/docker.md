@@ -12,6 +12,13 @@ docker restart name_container
 ```bash
 docker inspect name_container
 ```
+
+## Настройки
+Ограничение по CPU и RAM:
+```bash
+docker run --cpus="0.5" --memory="256m" NAME_IMAGE
+```
+
 ## Сети
 [Статья на хабре](https://habr.com/ru/companies/otus/articles/730798/)
 

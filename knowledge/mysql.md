@@ -137,7 +137,7 @@ CREATE DATABASE NAME_DB
 
 ```
 
-Использовать в запросах БД:
+Использовать в запросах БД / Выбрать БД:
 
 ```sql
 
@@ -205,6 +205,11 @@ ALTER TABLE books ADD FOREIGN KEY (author_id) REFERENCES authors(author_id);
 
 ```sql
 SHOW COLUMNS from table_name
+```
+
+Получить все таблицы
+```sql
+SHOW (FULL) TABLES FROM DB_NAME;
 ```
 
 ```sql
