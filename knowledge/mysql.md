@@ -208,6 +208,7 @@ SHOW COLUMNS from table_name
 ```
 
 Получить все таблицы
+
 ```sql
 SHOW (FULL) TABLES FROM DB_NAME;
 ```
@@ -359,6 +360,32 @@ SAVEPOINT NAME_POINT;
 ```sql
 ROLLBACK / ROLLBACK TO SAVEPOINT NAME_POINT
 ```
+
+## Бэкапы
+
+Бэкап всей БД с сжатием:
+
+```bash
+
+mysqldump -uroot -p ${DBNAME} | gzip > /path/to/save/${DBNAME}.sql.gz
+
+```
+
+Бэкап всей БД с сжатием из докера:
+
+```bash
+
+docker exec CONTAINER_NAME mysqldump -uroot -p ${DBNAME} | gzip > /path/to/save/${DBNAME}.sql.gz
+
+```
+
+Бэкап таблицы с сжатием из докера:
+
+```bash
+docker exec CONTAINER_NAME mysqldump -uroot -p ${DBNAME} TABLE_NAME | gzip > /path/to/save/${DBNAME}.sql.gz
+```
+
+
 
 ## События
 
