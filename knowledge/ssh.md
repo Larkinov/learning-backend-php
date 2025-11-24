@@ -9,13 +9,22 @@
 
 ```
 
-Проверить установлен ли SSH-ключ для текущего пользователя:
+Каталог хранения ключей на сервере:
 
 ```bash
-ls ~/.ssh
+/home/username/.ssh/authorized_keys - для username
+/root/.ssh/authorized_keys - для рута
+```
+Каталог хранения ключей на локальной машине (windows):
+```
+/c/username/.ssh
 ```
 
-Наименования ключей? id_rsa и id_rsa.pub
+Стандартные наименования ключей при их генерации:
+```
+id_rsa - закрытый
+id_rsa.pub - открытый
+```
 
 Создание SSH-ключа:
 
@@ -25,14 +34,6 @@ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 
 где, -t rsa - использовать алгоритм RSA. -b - количество битов. -C - комментарий
 
-Добавить SSH-ключ в ssh-agent:
-
-```bash
-
-eval $(ssh-agent -s)
-ssh-add ~/.ssh/id_rsa
-
-```
 
 Проверить подключение ключа к определенному сервису:
 
@@ -45,3 +46,7 @@ ssh -T git@github.com
         * Перейти на GitHub
         * Настройки -> SSH and GPG keys -> New SSH key
         * Вставить ключ id_rsa.pub
+
+
+## Putty
+Чтобы получить закрытый ключ в формате OpenSSL: конвертировать->экспортировать в формате OpenSSL
