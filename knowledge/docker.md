@@ -7,11 +7,45 @@
 ```bash
 docker restart name_container
 ```
+
+## Информация о контейнере
 Получить подробную информацию о контейнере:
 
 ```bash
 docker inspect name_container
 ```
+
+Получить информацию о контейнерах:
+```
+docker ps
+```
+Различные флаги команды:
+```
+-a, получить все контейнеры;
+--size, размеры контейнеров;
+--last N, получить N самых свежих контейнеров
+```
+
+Узнать размер контейнера:
+
+```bash
+docker ps --size
+```
+
+Узнать размер докер файлов:
+
+```bash
+docker system df
+```
+Узнать размер докер файлов по контейнерам/образам:
+```bash
+docker system df -v
+```
+Узнать размер докер контейнеров по CPU/RAM:
+```bash
+docker stats
+```
+
 
 ## Настройки
 Ограничение по CPU и RAM:
@@ -43,6 +77,11 @@ docker cp name_container:/file/path/container /file/path/host
 ```bash
 docker cp /file/path/host name_container:/file/path/container
 ```
+Узнать какие переменные среды использует контейнер:
+```bash
+sudo docker exec name_container env
+```
+
 # Docker Compose
 ## Параметры конфигурации
 [Параметры конфигурации .yml](https://docs.docker.com/reference/compose-file/)

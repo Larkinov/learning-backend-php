@@ -1,5 +1,7 @@
 # SSH
 
+Подробная статья с подключением: [https://selectel.ru/blog/ssh-authentication/]
+
 Настройки подключений:
 
 ```bash
